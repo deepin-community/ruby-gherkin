@@ -1,0 +1,5 @@
+- package ruby-beautifier (#730712)
+- build-depend on it
+- drop skip_beautify_ragel_task.patch
+
+  -- Cédric Boutillier <boutil@debian.org> 2013-11-28

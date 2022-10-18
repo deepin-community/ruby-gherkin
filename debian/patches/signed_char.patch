@@ -1,0 +1,537 @@
+Description: Force the assumption of signedness for the char type
+ The ragel-generator parsers seem to assume that the char type is signed, what
+ is not the case in some architectures such as arm* and s390*
+Origin: vendor
+Bug-Debian: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=685952
+Last-Update: 2013-07-31
+
+--- a/ext/gherkin_lexer_ar/extconf.rb
++++ b/ext/gherkin_lexer_ar/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_ar")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_ar")
+--- a/ext/gherkin_lexer_bg/extconf.rb
++++ b/ext/gherkin_lexer_bg/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_bg")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_bg")
+--- a/ext/gherkin_lexer_bm/extconf.rb
++++ b/ext/gherkin_lexer_bm/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_bm")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_bm")
+--- a/ext/gherkin_lexer_ca/extconf.rb
++++ b/ext/gherkin_lexer_ca/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_ca")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_ca")
+--- a/ext/gherkin_lexer_cs/extconf.rb
++++ b/ext/gherkin_lexer_cs/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_cs")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_cs")
+--- a/ext/gherkin_lexer_cy_gb/extconf.rb
++++ b/ext/gherkin_lexer_cy_gb/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_cy_gb")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_cy_gb")
+--- a/ext/gherkin_lexer_da/extconf.rb
++++ b/ext/gherkin_lexer_da/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_da")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_da")
+--- a/ext/gherkin_lexer_de/extconf.rb
++++ b/ext/gherkin_lexer_de/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_de")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_de")
+--- a/ext/gherkin_lexer_en/extconf.rb
++++ b/ext/gherkin_lexer_en/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_en")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_en")
+--- a/ext/gherkin_lexer_en_au/extconf.rb
++++ b/ext/gherkin_lexer_en_au/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_en_au")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_en_au")
+--- a/ext/gherkin_lexer_en_lol/extconf.rb
++++ b/ext/gherkin_lexer_en_lol/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_en_lol")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_en_lol")
+--- a/ext/gherkin_lexer_en_pirate/extconf.rb
++++ b/ext/gherkin_lexer_en_pirate/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_en_pirate")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_en_pirate")
+--- a/ext/gherkin_lexer_en_scouse/extconf.rb
++++ b/ext/gherkin_lexer_en_scouse/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_en_scouse")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_en_scouse")
+--- a/ext/gherkin_lexer_en_tx/extconf.rb
++++ b/ext/gherkin_lexer_en_tx/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_en_tx")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_en_tx")
+--- a/ext/gherkin_lexer_eo/extconf.rb
++++ b/ext/gherkin_lexer_eo/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_eo")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_eo")
+--- a/ext/gherkin_lexer_es/extconf.rb
++++ b/ext/gherkin_lexer_es/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_es")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_es")
+--- a/ext/gherkin_lexer_et/extconf.rb
++++ b/ext/gherkin_lexer_et/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_et")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_et")
+--- a/ext/gherkin_lexer_fi/extconf.rb
++++ b/ext/gherkin_lexer_fi/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_fi")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_fi")
+--- a/ext/gherkin_lexer_fr/extconf.rb
++++ b/ext/gherkin_lexer_fr/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_fr")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_fr")
+--- a/ext/gherkin_lexer_he/extconf.rb
++++ b/ext/gherkin_lexer_he/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_he")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_he")
+--- a/ext/gherkin_lexer_hr/extconf.rb
++++ b/ext/gherkin_lexer_hr/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_hr")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_hr")
+--- a/ext/gherkin_lexer_hu/extconf.rb
++++ b/ext/gherkin_lexer_hu/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_hu")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_hu")
+--- a/ext/gherkin_lexer_id/extconf.rb
++++ b/ext/gherkin_lexer_id/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_id")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_id")
+--- a/ext/gherkin_lexer_is/extconf.rb
++++ b/ext/gherkin_lexer_is/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_is")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_is")
+--- a/ext/gherkin_lexer_it/extconf.rb
++++ b/ext/gherkin_lexer_it/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_it")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_it")
+--- a/ext/gherkin_lexer_ja/extconf.rb
++++ b/ext/gherkin_lexer_ja/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_ja")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_ja")
+--- a/ext/gherkin_lexer_ko/extconf.rb
++++ b/ext/gherkin_lexer_ko/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_ko")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_ko")
+--- a/ext/gherkin_lexer_lt/extconf.rb
++++ b/ext/gherkin_lexer_lt/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_lt")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_lt")
+--- a/ext/gherkin_lexer_lu/extconf.rb
++++ b/ext/gherkin_lexer_lu/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_lu")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_lu")
+--- a/ext/gherkin_lexer_lv/extconf.rb
++++ b/ext/gherkin_lexer_lv/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_lv")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_lv")
+--- a/ext/gherkin_lexer_nl/extconf.rb
++++ b/ext/gherkin_lexer_nl/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_nl")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_nl")
+--- a/ext/gherkin_lexer_no/extconf.rb
++++ b/ext/gherkin_lexer_no/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_no")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_no")
+--- a/ext/gherkin_lexer_pl/extconf.rb
++++ b/ext/gherkin_lexer_pl/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_pl")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_pl")
+--- a/ext/gherkin_lexer_pt/extconf.rb
++++ b/ext/gherkin_lexer_pt/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_pt")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_pt")
+--- a/ext/gherkin_lexer_ro/extconf.rb
++++ b/ext/gherkin_lexer_ro/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_ro")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_ro")
+--- a/ext/gherkin_lexer_ru/extconf.rb
++++ b/ext/gherkin_lexer_ru/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_ru")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_ru")
+--- a/ext/gherkin_lexer_sk/extconf.rb
++++ b/ext/gherkin_lexer_sk/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_sk")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_sk")
+--- a/ext/gherkin_lexer_sr_cyrl/extconf.rb
++++ b/ext/gherkin_lexer_sr_cyrl/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_sr_cyrl")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_sr_cyrl")
+--- a/ext/gherkin_lexer_sr_latn/extconf.rb
++++ b/ext/gherkin_lexer_sr_latn/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_sr_latn")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_sr_latn")
+--- a/ext/gherkin_lexer_sv/extconf.rb
++++ b/ext/gherkin_lexer_sv/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_sv")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_sv")
+--- a/ext/gherkin_lexer_tr/extconf.rb
++++ b/ext/gherkin_lexer_tr/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_tr")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_tr")
+--- a/ext/gherkin_lexer_uk/extconf.rb
++++ b/ext/gherkin_lexer_uk/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_uk")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_uk")
+--- a/ext/gherkin_lexer_uz/extconf.rb
++++ b/ext/gherkin_lexer_uz/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_uz")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_uz")
+--- a/ext/gherkin_lexer_vi/extconf.rb
++++ b/ext/gherkin_lexer_vi/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_vi")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_vi")
+--- a/ext/gherkin_lexer_zh_cn/extconf.rb
++++ b/ext/gherkin_lexer_zh_cn/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_zh_cn")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_zh_cn")
+--- a/ext/gherkin_lexer_zh_tw/extconf.rb
++++ b/ext/gherkin_lexer_zh_tw/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_zh_tw")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_zh_tw")
+--- a/ext/gherkin_lexer_el/extconf.rb
++++ b/ext/gherkin_lexer_el/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_el")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_el")
+--- a/ext/gherkin_lexer_en_old/extconf.rb
++++ b/ext/gherkin_lexer_en_old/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_en_old")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_en_old")
+--- a/ext/gherkin_lexer_fa/extconf.rb
++++ b/ext/gherkin_lexer_fa/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_fa")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_fa")
+--- a/ext/gherkin_lexer_gl/extconf.rb
++++ b/ext/gherkin_lexer_gl/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_gl")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_gl")
+--- a/ext/gherkin_lexer_hi/extconf.rb
++++ b/ext/gherkin_lexer_hi/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_hi")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_hi")
+--- a/ext/gherkin_lexer_tl/extconf.rb
++++ b/ext/gherkin_lexer_tl/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_tl")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_tl")
+--- a/ext/gherkin_lexer_tt/extconf.rb
++++ b/ext/gherkin_lexer_tt/extconf.rb
+@@ -1,6 +1,6 @@
+ require 'mkmf'
+ CONFIG['warnflags'].gsub!(/-Wshorten-64-to-32/, '') if CONFIG['warnflags']
+-$CFLAGS << ' -O0 -Wall' if CONFIG['CC'] =~ /gcc|clang/
++$CFLAGS << ' -O0 -Wall -fsigned-char' if CONFIG['CC'] =~ /gcc|clang/
+ dir_config("gherkin_lexer_tt")
+ have_library("c", "main")
+ create_makefile("gherkin_lexer_tt")

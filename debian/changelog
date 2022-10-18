@@ -1,0 +1,121 @@
+ruby-gherkin (4.0.0-2) unstable; urgency=medium
+
+  * Team upload.
+  * ruby-gherkin is now architecture-independent.
+
+ -- Stefano Rivera <stefanor@debian.org>  Mon, 25 Jul 2016 10:07:46 -0700
+
+ruby-gherkin (4.0.0-1) unstable; urgency=medium
+
+  [ Stefano Rivera ]
+  * Team upload.
+  * New upstream release.
+  * Drop all patches, superseded upstream.
+  * Drop (Build-)Dependencies: ragel, ruby-json, ruby-multi-json.
+  * Drop debian/Rakefile, no longer necessary.
+  * History.md no longer exists.
+  * Bump Standards-Version to 3.9.8, no changes needed.
+
+  [ Cédric Boutillier ]
+  * Bump debhelper compatibility level to 9.
+  * Remove version in the gem2deb build-dependency.
+  * Use https:// in Vcs-* fields.
+  * Run wrap-and-sort on packaging files.
+
+ -- Stefano Rivera <stefanor@debian.org>  Mon, 25 Jul 2016 09:48:07 -0700
+
+ruby-gherkin (2.12.2-3) unstable; urgency=medium
+
+  * Add encoding_ruby21.patch to change the regexp matching the Ruby version
+    used to know when making use of Encoding features, so that it matches
+    Ruby2.1. This fixes FTBFS because of test failures with Ruby2.1.
+    (Closes: #744807)
+  * Remove noop encoding change in ruby-tests.rake
+
+ -- Cédric Boutillier <boutil@debian.org>  Fri, 25 Apr 2014 10:07:21 +0200
+
+ruby-gherkin (2.12.2-2) unstable; urgency=low
+
+  * Include again accidentally dropped changes from 2.12.1-2
+    + restore missing changelog entry for 2.12.1-2
+    + reintroduce same_sed_all_arches.patch to use the same sed commands on
+      all arches (and fix build on non Linux arches)
+
+ -- Cédric Boutillier <boutil@debian.org>  Fri, 29 Nov 2013 15:35:44 +0100
+
+ruby-gherkin (2.12.2-1) unstable; urgency=low
+
+  * Imported Upstream version 2.12.2
+  * Bump Standards-Version to 3.9.5 (no changes needed)
+  * Build against gem2deb >= 0.5 to add Ruby 2.0 support and drop Ruby 1.8
+  * debian/patches:
+    - refresh remove_bundler_rubygems_stuff.patch and skip_encoding_lexer.patch
+    - add skip_beautify_ragel_task.patch to skip beautification of generated
+      Ruby code (until ruby-beautify is packaged)
+
+ -- Cédric Boutillier <boutil@debian.org>  Thu, 28 Nov 2013 15:49:01 +0100
+
+ruby-gherkin (2.12.1-2) unstable; urgency=low
+
+  * add same_sed_all_arches.patch:
+    + do not distinguish between linux and other kernels for sed options
+    + fixes build issues on non linux ports
+
+ -- Cédric Boutillier <boutil@debian.org>  Mon, 02 Sep 2013 22:25:58 +0200
+
+ruby-gherkin (2.12.1-1) unstable; urgency=low
+
+  * Imported Upstream version 2.12.1
+  * Refresh patches
+  * debian/control:
+    + bump Standards-Version to 3.9.4 (no changes needed)
+    + update my email address
+    + build-depend on ruby-multi-json, ragel
+    + depend on ruby-multi-json
+  * debian/rules:
+    + Install upstream changelog
+    + use debian/Rakefile to regenerate upstream C and Ruby files from ragel
+  * add myself to copyright holders of debian/*
+  * debian/patches:
+    + add fix_path_ragel_task.patch: fix paths in sed commands in
+    tasks/ragel_task.rb
+    + add skip_encoding_lexer.patch, skipping failing tests on powerpc
+    + remove signed_char.patch from quilt series
+
+ -- Cédric Boutillier <boutil@debian.org>  Wed, 31 Jul 2013 15:47:02 +0200
+
+ruby-gherkin (2.11.1-2) unstable; urgency=low
+
+  * debian/patches/signed_char.patch: force the assumption of signedness for
+    the char type (Closes: #685952)
+
+ -- Antonio Terceiro <terceiro@debian.org>  Sat, 18 May 2013 15:24:59 -0300
+
+ruby-gherkin (2.11.1-1) unstable; urgency=low
+
+  * New upstream version
+
+ -- Cédric Boutillier <cedric.boutillier@gmail.com>  Wed, 27 Jun 2012 13:02:33 +0200
+
+ruby-gherkin (2.11.0-2) unstable; urgency=low
+
+  * Build-depend on gem2deb >=0.3.0
+
+ -- Cédric Boutillier <cedric.boutillier@gmail.com>  Mon, 25 Jun 2012 10:55:13 +0200
+
+ruby-gherkin (2.11.0-1) unstable; urgency=low
+
+  * New upstream version
+  * Bump Standards-Version: to 3.9.3 (no changes needed)
+  * Add myself to Uploaders:
+  * Convert single Debian patch to remove_bundler_rubygems_stuff.patch
+  * Use ruby-tests.rake to run the tests. Build-depends on rake
+  * Install examples in /usr/share/doc/ruby-gherkin/examples
+
+ -- Cédric Boutillier <cedric.boutillier@gmail.com>  Wed, 20 Jun 2012 19:17:45 +0200
+
+ruby-gherkin (2.4.6-1) unstable; urgency=low
+
+  * Initial release (Closes: #636788)
+
+ -- Antonio Terceiro <terceiro@debian.org>  Fri, 05 Aug 2011 14:53:33 -0700
